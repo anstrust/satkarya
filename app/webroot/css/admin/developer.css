@@ -1,0 +1,126 @@
+.error {
+    color: red !important;
+    font-size: 14px !important;
+}
+.link {
+	color: gray;
+}
+
+.btn.margin_top_24 {
+    margin-top: 24px;
+}
+.register_detail_gender div .radio input {
+    float: left;
+    margin: 1px 10px 0 0;
+    padding: 2px 0 0;
+    position: inherit;
+}
+.register_detail_gender div .radio label {
+    float: left;
+    line-height: 16px;
+    margin: 0 10px 0 0;
+    padding: 0;
+    width: auto;
+}
+.padding-left10{
+	padding-left:10px;
+}
+.margin_top_20{
+	margin-top: 20px;
+}
+.marginl_left7 {
+    margin-left: 7px;
+}
+.margin-left-20{
+	margin-left: -20px !important;
+}
+.margn-left-6{
+	margin-left: 6px !important;
+}
+
+.loading_image {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 2px 2px 10px 2px #acacac;
+    display: inline-block;
+    //margin: 17% auto;
+    padding: 35px 20px;
+    width: 115px;
+    z-index: 5000999;
+	}
+/*.valid {
+	display: inline-block;
+    
+    text-align: center;
+    width: 100%;
+	position:relative;	
+	} 
+
+.fa-toggle-on{
+color:#93A55D;
+}
+.fa-toggle-off{
+color:#999;
+}
+*/
+.ld {
+     background:none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    float: left;
+    height: 100%;
+    top:0;
+    left:0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+     z-index: 9999;
+	}
+#loader_div > table {
+    float: left;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+	}
+#loader_div td {
+    vertical-align: middle;
+	}
+	
+	a.tooltips {
+  position: absolute;
+  display: inline-block;
+  
+}
+a.tooltips span {
+  position: absolute;
+  width:110px;
+  color: #FFFFFF;
+  background: #000000;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  visibility: hidden;
+  border-radius: 9px;
+}
+a.tooltips span:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -8px;
+  width: 0; height: 0;
+  border-top: 8px solid #000000;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+a:hover.tooltips span {
+  visibility: visible;
+  opacity: 0.8;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -54px;
+  z-index: 1;
+}
+.frnd-pic {
+  width: 44px;
+  border-radius: 20px;
+}
+

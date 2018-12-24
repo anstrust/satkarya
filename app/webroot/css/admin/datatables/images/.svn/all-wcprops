@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/inventtica/!svn/ver/1/app/webroot/css/admin/datatables/images
+END
+sort_both.png
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/inventtica/!svn/ver/1/app/webroot/css/admin/datatables/images/sort_both.png
+END
+sort_asc_disabled.png
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/inventtica/!svn/ver/1/app/webroot/css/admin/datatables/images/sort_asc_disabled.png
+END
+sort_desc.png
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/inventtica/!svn/ver/1/app/webroot/css/admin/datatables/images/sort_desc.png
+END
+sort_desc_disabled.png
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/inventtica/!svn/ver/1/app/webroot/css/admin/datatables/images/sort_desc_disabled.png
+END
+sort_asc.png
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/inventtica/!svn/ver/1/app/webroot/css/admin/datatables/images/sort_asc.png
+END

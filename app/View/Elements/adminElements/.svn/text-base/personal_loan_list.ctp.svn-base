@@ -1,0 +1,111 @@
+<script type="text/javascript">
+$(document).ready(function() {
+	 
+  var host = window.location.host;
+	var proto = window.location.protocol;
+	var ajax_url = proto+"//"+host+"/soEasyLoan";
+
+	
+	$('.delRec').click(function(){
+			if(confirm('Do you really want to delete this Request ?'))
+			{
+				$this = $(this);
+				var id = $(this).attr('id');
+				var model ='PersonalLoan';
+				
+				$.post(ajax_url+'/admin/users/delete_data/'+id+'/'+model,function(resp){
+					$this.parents('tr').fadeOut(2000,function(){
+						$(this).remove();
+            //window.location.reload();
+            $.post(ajax_url+'/admin/users/personal_loan_request/page:<?php echo $this->Paginator->current();?>', function(get_data){
+              $('#search_result').html(get_data);
+              $('.all_count').html($('.box-header').attr('data-info'));
+            });          
+					});
+
+				});
+			}
+			return false;					
+	});
+	
+});
+</script> 
+
+<style>
+#example tr th a{color:#fff;}
+a.tooltips span{
+width:80px;	
+}
+a:hover.tooltips span {
+  margin-left: -40px;
+}
+</style>
+<div id="search_result">
+<div class="box-body table-responsive margin-top-20">
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr class="info"> 
+			<th class="sorting_asc" style="text-align:center;">No.</th>
+			<th class="sorting_asc" style="text-align:left;">Name</th>
+      <th class="sorting_asc" style="text-align:left;">Email ID</th>
+      <th class="sorting_asc" style="text-align:left;">Contact Number</th>
+      <th class="sorting_asc" style="text-align:left;">Loan Amount</th>
+			<th class="sorting_asc" style="text-align:left;">Requested on</th>
+			<th class="sorting_asc" style="text-align:center;">Action</th>
+		</tr>
+   </thead>
+    <tbody>
+    <?php if(empty($personal_loan_info)){ ?>
+      <td colspan="7" style="text-align:center; width: 30px;">No Request Yet !</td>
+    <?php }else{
+    $i=$this->Paginator->counter('%start%');
+    foreach($personal_loan_info as $personal_loan_info){?>
+        <tr>
+			<td style="text-align:center; width: 30px;"><?php echo $i; ?></td>
+			<td style="text-align:left; width: 150px;"><?php echo $personal_loan_info['PersonalLoan']['name']; ?></td>			
+			<td style="text-align:left; width: 250px;"><?php echo $personal_loan_info['PersonalLoan']['email']; ?></td>
+			<td style="text-align:left; width: 150px;"><?php echo $personal_loan_info['PersonalLoan']['phone']; ?></td>
+			<td style="text-align:left; width: 150px;"><?php echo $personal_loan_info['PersonalLoan']['amount']; ?></td>     
+			<td style="text-align:left; width: 250px;"><?php echo $personal_loan_info['PersonalLoan']['requested_on']; ?></td>
+			<td style="text-align:center; width: 120px;">
+				<?php $id = base64_encode(convert_uuencode($personal_loan_info['PersonalLoan']['id'])); 
+          if(@$personal_loan_info['PersonalLoan']['status']==1){
+            $toggle_switch="fa-toggle-on";
+          }else{
+            $toggle_switch="fa-toggle-off";
+          }
+        ?>
+				
+        <!--<a title="" class="updateStatus tooltips" id="<?php echo $id;?>" href="javascript:void(0)"><i class="fa fa-lg <?php echo $toggle_switch;?>"></i><span>Update Staus</span></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+
+        <a title="" class="tooltips" href="<?php echo HTTP_ROOT;?>admin/users/view_personal_loan/<?php echo $id;?>"><i class="fa fa-lg fa-eye"></i><span>View Detail</span></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        
+        <a title="" class="delRec tooltips" id="<?php echo $id;?>" href="javascript:void(0)"><i class="fa fa-lg fa-trash-o"></i><span>Delete</span></a>
+				
+				
+				
+         	</td>
+		</tr>
+	<?php $i++; } 
+  }?>	 					
+	</tbody>
+</table>
+</div>
+<div class="box-header" data-info="<?php echo count($total_loan);?>">					
+	<?php if(count($total_loan)>10){
+	$this->Paginator->options(array(
+						'update' => '#search_result',
+						'evalScripts' => true,
+						'before' => $this->Js->get('#loader_div')->effect('fadeIn', array('speed' => 'fast')),
+						'complete' => $this->Js->get('#loader_div')->effect('fadeOut', array('speed' => 'fast'))
+					));		
+	echo $this->element('adminElements/table_head'); 
+	echo $this->Js->writeBuffer();		
+		}
+
+	?>
+</div>
+</div>

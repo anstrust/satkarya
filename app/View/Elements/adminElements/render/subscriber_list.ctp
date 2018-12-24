@@ -1,0 +1,16 @@
+    <?php if(empty($data)){ ?>
+      <tr>
+        <td colspan=5 style="text-align:center;">No Subscriber Found !</td>
+      </tr>
+    <?php }else{
+    $i=1;
+    foreach($data as $subscriber_info){?>
+    <tr>
+      <td style="text-align:center; width: 30px;"><input name="email<?php echo $i; ?>" type="checkbox" class="ckeckbox_child" value='<?php echo $subscriber_info['NewsletterSubscriber']['email']; ?>'></td>
+			<td style="text-align:center; width: 30px;"><?php echo $i; ?></td>
+			<!--<td style="text-align:left; width: 150px;"><?php echo $subscriber_info['NewsletterSubscriber']['name']; ?></td>			-->
+			<td style="text-align:left; width: 150px;"><?php echo $subscriber_info['NewsletterSubscriber']['email']; ?></td>
+			<td style="text-align:left; width: 250px;"><?php echo $subscriber_info['NewsletterSubscriber']['subscribed_at']; ?></td>
+		</tr>
+	<?php $i++; } 
+    }?>	 					

@@ -1,0 +1,120 @@
+<!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="<?php echo HTTP_ROOT.'img/adminImg/adminProfile/'.$this->Session->read('Admin.image'); ?>" class="img-circle" alt="User Image" />
+                </div>
+                <div class="pull-left info">
+                    <p>Welcome</p>
+                    <p><?php echo $this->Session->read('Admin.firstname').' '.$this->Session->read('Admin.lastname');?></p>
+                </div>
+            </div>
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="<?php echo HTTP_ROOT.'admin/users/dashboard'?>">
+                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-user"></i>
+                        <span>Member Management</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/investor'?>"><i class="fa fa-angle-double-right"></i> Manage Investors</a></li>
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/entrepreneur'?>"><i class="fa fa-angle-double-right"></i> Manage Entrepreneur</a></li>
+                    </ul>
+                </li>                 
+                <!--<li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-gears"></i>
+                        <span>General Management</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/contacts'?>"><i class="fa fa-angle-double-right"></i> Contact Request</a></li>
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/testimonials'?>"><i class="fa fa-angle-double-right"></i> Manage Testimonial</a></li>
+                    </ul>
+                </li>--> 
+                                               
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa  fa-newspaper-o"></i>
+                        <span>Newsletter Module</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/newsletters'?>"><i class="fa fa-angle-double-right"></i> Newsletters</a></li>
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/newsletter_subscribers'?>"><i class="fa fa-angle-double-right"></i> Subscribed Members</a></li>
+                    </ul>
+                </li>  
+                
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-th-large"></i>
+                        <span>Content Management</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/faqs'?>"><i class="fa fa-angle-double-right"></i> Manage FAQs</a></li>
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/show_cms'?>"><i class="fa fa-angle-double-right"></i> Manage Pages</a></li>
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/inventti_hub'?>"><i class="fa fa-angle-double-right"></i> Manage Inventti-Hub</a></li>
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/inventti_clinic'?>"><i class="fa fa-angle-double-right"></i> Manage Inventti-Clinic</a></li>
+                    </ul>
+                </li>
+                
+                <!--<li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-file-text-o"></i>
+                        <span>Reports Management</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/email_templates'?>"><i class="fa fa-angle-double-right"></i> Email Templates</a></li>
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/show_cms'?>"><i class="fa fa-angle-double-right"></i> Cms</a></li>
+                    </ul>
+                </li>  -->
+                
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-files-o"></i>
+                        <span>Template Modules</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/email_templates'?>"><i class="fa fa-angle-double-right"></i> Email Templates</a></li>
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/newsletter_templates'?>"><i class="fa fa-angle-double-right"></i> Newsletter Templates</a></li>
+                    </ul>
+                </li> 
+
+               <!-- <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-clipboard"></i> <span>Forms Management</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/add_teacher'?>"><i class="fa fa-angle-double-right"></i>Teacher Registration</a></li>
+                        <li><a href="<?php echo HTTP_ROOT.'admin/users/student_registration'?>"><i class="fa fa-angle-double-right"></i> Student Registration</a></li>
+                    </ul>
+                </li>
+                 <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-envelope-o"></i> <span>Broadcast Email</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="<?php echo HTTP_ROOT.'admin/users/broadcast_email'?>"><i class="fa fa-angle-double-right"></i>Broadcast Email</a>
+                        </li>
+                    </ul>
+                </li>
+              -->
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
